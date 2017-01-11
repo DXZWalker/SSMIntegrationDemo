@@ -18,4 +18,19 @@ public interface UserService {
 	 * @return
 	 */
 	List<User> findAllUser();
+
+	/**
+	 * 通过ID获取用户
+	 * 
+	 * @param id
+	 * @return
+	 */
+	User findById(Integer id);
+
+	/**
+	 * 更新用户
+	 * 
+	 * @param user
+	 */
+	void update(User user);
 }

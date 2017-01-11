@@ -12,14 +12,25 @@
 
 	<!-- 扫描带@Controller的类 -->
 	<context:component-scan base-package="com.pc.ssm.web.controller" />
-	
+
 	<!-- 加载注解驱动，自动加载默认处理器映射器和处理器适配器 -->
-	<mvc:annotation-driven />
-	
+	<mvc:annotation-driven conversion-service="conversionService"/>
+
+	<!-- 转换器配置 -->
+	<bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+		<property name="converters">
+			<set>
+				<bean class="com.pc.ssm.web.converter.DateConverter" />
+			</set>
+		</property>
+	</bean>
+
 	<!-- 视图解析器 -->
-	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<!-- 可以不配置，默认使用jstl视图 -->
-		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
 		<!-- jsp前缀 -->
 		<property name="prefix" value="/WEB-INF/jsp/" />
 		<!-- jsp后缀 -->

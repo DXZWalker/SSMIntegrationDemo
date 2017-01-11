@@ -17,10 +17,10 @@
 					<td>用户名</td>
 					<td><input type="text" name="username" value="${user.username}"/></td>
 				</tr>
-				<%-- <tr>
+				<tr>
 					<td>生日</td>
 					<td><input type="text" name="birthday" value="<fmt:formatDate value="${user.birthday}" pattern="yyyy-MM-dd HH:mm:ss"/>" /></td>
-				</tr> --%>
+				</tr>
 				<tr>
 					<td>性别</td>
 					<td>
